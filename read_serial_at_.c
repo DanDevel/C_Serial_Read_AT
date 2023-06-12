@@ -17,10 +17,8 @@ void setup() {
   delay(1000);
   
   // Envie comandos AT para o módulo GSM
-  gsmSerial.println("AT");
-  delay(500);
-  gsmSerial.println("AT+CMGF=1"); // Configura o modo de texto para mensagens SMS
-  delay(500);
+  sendATCommand("AT");
+  sendATCommand("AT+CMGF=1"); // Configura o modo de texto para mensagens SMS
 }
 
 void loop() {
@@ -34,3 +32,13 @@ void loop() {
     gsmSerial.print(sendChar); // Envia o caractere para o módulo GSM
   }
 }
+
+// Função para enviar comandos AT para o módulo GSM
+void sendATCommand(String command) {
+  gsmSerial.println(command);
+  delay(500);
+  while (gsmSerial.available()) {
+    Serial.write(gsmSerial.read());
+  }
+}
+
