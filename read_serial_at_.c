@@ -1,4 +1,4 @@
-#include <SoftwareSerial.h>
+#include <SoftwareSerial.h> // instala5r lib
 
 // Defina os pinos RX e TX para comunicação com o módulo GSM
 const int GSM_RX_PIN = 2;
