@@ -3,7 +3,11 @@
 // Defina os pinos RX e TX para comunicação com o módulo GSM
 const int GSM_RX_PIN = 2;
 const int GSM_TX_PIN = 3;
-
+/*
+choose other ports (opt)
+const int GSM_RX_PIN = 2;
+const int GSM_TX_PIN = 3;
+*/
 SoftwareSerial gsmSerial(GSM_RX_PIN, GSM_TX_PIN); // Cria uma instância de SoftwareSerial
 
 void setup() {
